@@ -31,7 +31,7 @@ public class Subfamilia implements Serializable {
     private String subfamilia;
     @Size(max = 50)
     @Column(name = "codigo")
-    private String codigo;
+    private String codigo;    
     @JoinColumn(name = "idfamilia", referencedColumnName = "idfamilia")
     @ManyToOne(optional = false)
     private Familia familia;

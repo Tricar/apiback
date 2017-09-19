@@ -55,4 +55,10 @@ public class FamiliaController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
     
+    //Rest Controller para hacer búsquedas por nombre
+    @RequestMapping(method = RequestMethod.GET, value = "/familias/{nombre}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Familia> buscarAnexoPorId(@PathVariable String nombre) {
+        Familia familia = familiaService.buscarxNombre(nombre);
+        return new ResponseEntity<>(familia, HttpStatus.OK);
+    }
 }

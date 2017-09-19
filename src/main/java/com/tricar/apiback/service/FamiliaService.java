@@ -36,4 +36,11 @@ public class FamiliaService {
         familiaRepository.delete(familia);
     }
     
+    //Método service para realizar la búsqueda por nombre de familia
+    public Familia buscarxNombre (String nombre){
+        Familia familia = new Familia();
+        familia = familiaRepository.findByNombre(nombre);
+        return familia;
+    }      
+    
 }

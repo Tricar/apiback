@@ -14,44 +14,45 @@ import javax.validation.constraints.Size;
  * @author D@joh
  */
 @Entity
-@Table(name = "familia")
+@Table(name = "tipoorden")
 
-public class Familia implements Serializable {
+public class Tipoorden implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "idfamilia")
-    private Integer idfamilia;
+    @Column(name = "idtipo")
+    private Integer idtipo;
     @Size(max = 50)
-    @Column(name = "familia")
-    private String familia;
+    @Column(name = "tipo")
+    private String tipo;
     @Size(max = 50)
     @Column(name = "codigo")
-    private String codigo;    
+    private String codigo;
+    
 
-    public Familia() {
+    public Tipoorden() {
     }
 
-    public Familia(Integer idfamilia) {
-        this.idfamilia = idfamilia;
+    public Tipoorden(Integer idtipo) {
+        this.idtipo = idtipo;
     }
 
-    public Integer getIdfamilia() {
-        return idfamilia;
+    public Integer getIdtipo() {
+        return idtipo;
     }
 
-    public void setIdfamilia(Integer idfamilia) {
-        this.idfamilia = idfamilia;
+    public void setIdtipo(Integer idtipo) {
+        this.idtipo = idtipo;
     }
 
-    public String getFamilia() {
-        return familia;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setFamilia(String familia) {
-        this.familia = familia;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getCodigo() {
@@ -65,18 +66,18 @@ public class Familia implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idfamilia != null ? idfamilia.hashCode() : 0);
+        hash += (idtipo != null ? idtipo.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Familia)) {
+        if (!(object instanceof Tipoorden)) {
             return false;
         }
-        Familia other = (Familia) object;
-        if ((this.idfamilia == null && other.idfamilia != null) || (this.idfamilia != null && !this.idfamilia.equals(other.idfamilia))) {
+        Tipoorden other = (Tipoorden) object;
+        if ((this.idtipo == null && other.idtipo != null) || (this.idtipo != null && !this.idtipo.equals(other.idtipo))) {
             return false;
         }
         return true;
@@ -84,7 +85,7 @@ public class Familia implements Serializable {
 
     @Override
     public String toString() {
-        return "com.tricar.apiback.model.Familia[ idfamilia=" + idfamilia + " ]";
+        return "com.tricar.apiback.model.Tipoorden[ idtipo=" + idtipo + " ]";
     }
     
 }
